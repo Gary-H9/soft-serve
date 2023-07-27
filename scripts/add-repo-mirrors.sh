@@ -9,7 +9,7 @@ import_repo() {
     local repo_name="$1"
     local repo_url="$2"
 
-    ssh -p "$port" -i "$keyfile" "$host" repo import -m "$repo_name" "$repo_url"
+    ssh -oStrictHostKeyChecking=no -p "$port" -i "$keyfile" "$host" repo import -m "$repo_name" "$repo_url"
     echo "🗃️ Added $repo_name mirror..."
 }
 
@@ -17,6 +17,10 @@ import_repo() {
 repos=(
     "data-platform https://github.com/ministryofjustice/data-platform"
     "cloud-platform-environments https://github.com/ministryofjustice/cloud-platform-environments"
+    "analytical-platform-user-guidance https://github.com/ministryofjustice/analytical-platform-user-guidance"
+    "analytics-platform-control-panel-public https://github.com/ministryofjustice/analytics-platform-control-panel-public"
+    "analytics-platform-rshiny https://github.com/ministryofjustice/analytics-platform-rshiny"
+    "analytics-platform-shiny-server https://github.com/ministryofjustice/analytics-platform-shiny-server"
 )
 
 # Loop through the list and import repositories
