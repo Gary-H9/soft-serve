@@ -5,7 +5,7 @@ import_repo() {
     local host="127.0.0.1"
     local port="23231"
     # local keyfile="$HOME/.ssh/id_ed25519"
-    local keyfile="/root/.ssh/id_rsa"
+    local keyfile="/home/softserve/.ssh/id_rsa"
     local repo_name="$1"
     local repo_url="$2"
 
